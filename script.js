@@ -1,20 +1,19 @@
-// DECLARE Current time
+// Current time
 var currentTime = moment();
-// DECLARE Current Hour
+// Current Hour
 var currentHour = moment().format('HH');
-// DECLARE Current Day HTML Element
-var currentDayEl = $('#currentDay').text(moment().format('dddd, MMMM, do, YYYY'));
-// DECLARE Time Entries Container HTML Element
+// Current Day HTML Element
+var currentDayEl = $('#currentDay').text(moment().format('dddd, MMMM do, YYYY'));
 
+// Function for styling time blocks depending on the current time of day
 function timeBlockStyling() {
-
+// Selects the text entry area element of each time block (9 array items)
 var formInput = $(".description");
-
+// Loops through each time block
 for (let i = 0; i < formInput.length; i++) {
-    
+    // Variable which selects the data set hours and applies each formInput index number to its corresponding data hour number
     var hourEl = formInput[i].dataset.hour
-    console.log(hourEl);
-    
+    // Comparisons to verify past, present, and future time blocks and apply corresponding CSS styling
    if (currentHour === hourEl) {
        formInput[i].classList.add("present");
    } else if (currentHour > hourEl) {
@@ -25,7 +24,6 @@ for (let i = 0; i < formInput.length; i++) {
 }
 
 }
-
 timeBlockStyling();
 
 // Set up a click event listener on the container

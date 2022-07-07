@@ -13,7 +13,7 @@ var formInput = $(".description");
 for (let i = 0; i < formInput.length; i++) {
     // Variable which selects the data set hours and applies each formInput index number to its corresponding data hour number
     var hourEl = formInput[i].dataset.hour
-    // Comparisons to verify past, present, and future time blocks and apply corresponding CSS styling
+    // Comparison statements for verifying past, present, and future time blocks to apply appropriate CSS stylings
    if (currentHour === hourEl) {
        formInput[i].classList.add("present");
    } else if (currentHour > hourEl) {
@@ -27,17 +27,15 @@ for (let i = 0; i < formInput.length; i++) {
 timeBlockStyling();
 
 // Set up a click event listener on the container
-// timeEntryEl.on("click", "button", function(event) {
+    // formInput.on("click", "button", function(event) {
 
-//     // Fetch the hour from the clicked button's (event.target) "data-hour" attribute (data-hour moved to text area from button)
+    // Fetch the hour from the clicked button's (event.target "data-hour" attribute (data-hour moved to text area from button)
 
-//     // Use the hour to create the key for local storage
+    // Use the hour to create the key for local storage
 
-//     // From the clicked button, traverse the DOM to the nearby <textarea> to fetch its value
+    // From the clicked button, traverse the DOM to the nearby <textarea> to fetch its value
 
-//     // Use the key and the value to save into localStorage
-
-// });
+    // Use the key and the value to save into localStorage
 
 // localStorage.setItem(KEY, JSON.stringify (user text value))
 // var localstoragedatalol = JSON.parse(localStorage.getItem("KEY"))
